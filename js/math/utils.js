@@ -1,9 +1,9 @@
-function getNearestPoint(loc, points) {
+function getNearestPoint(loc, points, treshold = Number.MAX_SAFE_INTEGER) {
   let minDist = Number.MAX_SAFE_INTEGER;
   let nearest = null;
   for (const point of points) {
     const dist = distance(point, loc);
-    if (dist < minDist) {
+    if (dist < minDist && dist < treshold) {
       minDist = dist;
       nearest = point;
     }
