@@ -44,6 +44,18 @@ class Viewport {
     }
   }
 
+  #handleMouseUp(evt) {
+    if(this.drag.active) {
+      this.offset = add(this.offset, this.drag.offset);
+      this.drag = {
+        start: new Point(0, 0),
+        end: new Point(0, 0),
+        offset: new Point(0, 0),
+        active: false
+      };
+    }
+  }
+
   #handleMouseWheel(evt) {
     const dir = Math.sign(evt.deltaY);
     const step = 0.1;
