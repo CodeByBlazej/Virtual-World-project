@@ -23,6 +23,10 @@ class Viewport {
     );
   }
 
+  getOffset() {
+    return add(this.offset, this.drag.offset);
+  }
+
   #addEventListeners() {
     this.canvas.addEventListener("mousewheel", this.#handleMouseWheel.bind(this));
     this.canvas.addEventListener("mousedown", this.#handleMouseDown.bind(this));
