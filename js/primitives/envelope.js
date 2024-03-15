@@ -13,7 +13,7 @@ class Envelope {
     const alpha_ccw = alpha - Math.PI / 2;
     
     const points = [];
-    const step = Math.PI / 3;
+    const step = Math.PI / 10;
     for (let i = alpha_ccw; i <= alpha_cw; i += step) {
       points.push(translate(p1, i, radius));
     }
