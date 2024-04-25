@@ -23,7 +23,7 @@ class World {
 
   draw(ctx) {
     for (const env of this.envelopes) {
-      env.draw(ctx);
+      env.draw(ctx, { fill: "#BBB", stroke: "#BBB" });
     }
     for (const seg of this.roadBorders) {
       seg.draw(ctx, { color: "white", width: 4 });
