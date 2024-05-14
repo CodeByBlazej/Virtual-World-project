@@ -43,7 +43,10 @@ class World {
         )
       );
     }
-    return tmpEnvelopes;
+
+    const guides = Polygon.union(tmpEnvelopes.map((e) => e.poly));
+
+    return guides;
   }
 
   draw(ctx) {
