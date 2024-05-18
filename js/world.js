@@ -75,7 +75,12 @@ class World {
       }
     }
 
-    return supports;
+    const bases = [];
+    for (const seg of supports) {
+      bases.push(new Envelope(seg, this.buildingWidth).poly);
+    }
+
+    return bases;
   }
 
   draw(ctx) {
